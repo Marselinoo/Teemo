@@ -25,15 +25,15 @@ function HeroSection() {
     <section className="bg-gray-50 py-20 px-6 text-center">
       {/* Heading */}
       <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-        <span className="bg-linear-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
           Compete. Connect.
         </span>
         <br />
-        <span className="text-gray-900">Achieve Together.</span>
+        <span className="text-black">Achieve Together.</span>
       </h1>
 
       {/* Subtext */}
-      <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
+      <p className="mt-6 text-black max-w-2xl mx-auto text-lg">
         Join a professional network where ambition meets opportunity.
         Participate in competitions, build teams, showcase your achievements,
         and grow your career.
@@ -42,7 +42,7 @@ function HeroSection() {
       {/* CTA Button */}
       <div className="mt-8">
         <Link to="/login" 
-        className="bg-linear-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:opacity-90 transition">
+        className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:opacity-90 transition">
           Mulai Sekarang →
         </Link>
       </div>
@@ -57,7 +57,7 @@ function HeroSection() {
               className="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition flex flex-col items-center"
             >
               <Icon className="w-6 h-6 text-purple-500 mb-3" />
-              <p className="text-sm font-medium text-gray-700">
+              <p className="text-sm font-medium text-black">
                 {item.title}
               </p>
             </div>

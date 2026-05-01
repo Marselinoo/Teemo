@@ -4,7 +4,7 @@ function LoginHeader() {
   return (
     <div className="text-center mb-6">
       <div className="flex items-center justify-center gap-2 mb-4">
-        <div className="bg-linear-to-r from-purple-500 to-pink-500 p-2 rounded-lg">
+        <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 rounded-lg">
           <Trophy className="text-white w-5 h-5" />
         </div>
         <span className="text-lg font-semibold text-purple-600">

@@ -8,14 +8,14 @@ function Footer() {
         
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="bg-linear-to-r from-purple-500 to-pink-500 p-2 rounded-lg">
+          <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 rounded-lg">
             <Trophy className="w-5 h-5 text-white" />
           </div>
           <span className="text-lg font-semibold">CompeteHub</span>
         </div>
 
         {/* Text */}
-        <p className="text-gray-400 text-sm">
+        <p className="text-black text-sm">
           © 2026 CompeteHub. Empowering professionals to compete and grow.
         </p>
 

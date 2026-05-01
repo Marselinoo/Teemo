@@ -26,7 +26,7 @@ function FeatureHighlightSection() {
   ];
 
   return (
-    <section className="bg-linear-to-r from-purple-600 to-pink-500 py-20 px-6 text-white text-center">
+    <section className="bg-gradient-to-r from-purple-600 to-pink-500 py-20 px-6 text-white text-center">
       
       {/* Title */}
       <h2 className="text-3xl md:text-5xl font-bold">

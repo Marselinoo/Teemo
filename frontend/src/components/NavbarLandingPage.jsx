@@ -10,7 +10,7 @@ function Navbar() {
       
       {/* Logo */}
       <div className="flex items-center gap-2">
-        <div className="bg-linear-to-r from-purple-500 to-pink-500 p-2 rounded-lg">
+        <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 rounded-lg">
           <Trophy className="text-white w-5 h-5" />
         </div>
         <span className="text-xl font-bold text-purple-600 tracking-wide">
@@ -20,7 +20,7 @@ function Navbar() {
 
       {/* Login Button */}
       <Link to="/login" 
-      className="bg-linear-to-r from-purple-500 to-pink-500 text-white px-5 py-2 rounded-full font-medium shadow-md hover:opacity-90 transition">
+      className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-5 py-2 rounded-full font-medium shadow-md hover:opacity-90 transition">
         Login
       </Link>
     </nav>

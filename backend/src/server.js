@@ -6,7 +6,7 @@ import authRoutes from './routes/auth.routes.js'
 import apiRoutes from './routes/api.routes.js'
 
 const app = express()
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5005
 
 // ── Middleware ────────────────────────────────────────────────────────────────
 app.use(cors({

@@ -22,7 +22,7 @@ function NotFoundPage() {
       {/* Button */}
       <button
         onClick={() => navigate("/")}
-        className="mt-6 bg-linear-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full shadow-md hover:opacity-90 transition"
+        className="mt-6 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full shadow-md hover:opacity-90 transition"
       >
         Kembali ke Beranda
       </button>
