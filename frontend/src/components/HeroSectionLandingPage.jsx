@@ -6,8 +6,12 @@ import {
   TrendingUp,
   Network,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 function HeroSection() {
+  // const navigate = useNavigate();
+  
   const features = [
     { title: "Professional Network", icon: Network },
     { title: "Competitions", icon: Trophy },
@@ -37,9 +41,10 @@ function HeroSection() {
 
       {/* CTA Button */}
       <div className="mt-8">
-        <button className="bg-linear-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:opacity-90 transition">
+        <Link to="/login" 
+        className="bg-linear-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:opacity-90 transition">
           Mulai Sekarang →
-        </button>
+        </Link>
       </div>
 
       {/* Feature List */}

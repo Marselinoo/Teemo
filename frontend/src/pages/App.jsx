@@ -9,6 +9,7 @@ import './index.css'
 import { Route, Routes } from 'react-router-dom'
 import LandingPage from './LandingPage'
 import NotFoundPage from './NotFoundPage'
+import LoginPage from './LoginPage'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
   return (
       <Routes>
         <Route path='/' element={<LandingPage />} />
+        <Route path='/login' element={<LoginPage />} />
 
 
         <Route path='/*' element={<NotFoundPage />} />

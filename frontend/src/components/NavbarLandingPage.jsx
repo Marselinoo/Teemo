@@ -1,6 +1,10 @@
 import { Trophy } from "lucide-react";
+import { Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  // const navigate = useNavigate();
+
   return (
     <nav className="w-full bg-white shadow-sm px-6 py-4 flex items-center justify-between">
       
@@ -15,9 +19,10 @@ function Navbar() {
       </div>
 
       {/* Login Button */}
-      <button className="bg-linear-to-r from-purple-500 to-pink-500 text-white px-5 py-2 rounded-full font-medium shadow-md hover:opacity-90 transition">
+      <Link to="/login" 
+      className="bg-linear-to-r from-purple-500 to-pink-500 text-white px-5 py-2 rounded-full font-medium shadow-md hover:opacity-90 transition">
         Login
-      </button>
+      </Link>
     </nav>
   );
 }
