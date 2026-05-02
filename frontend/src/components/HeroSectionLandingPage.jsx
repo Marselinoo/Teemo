@@ -22,7 +22,7 @@ function HeroSection() {
   ];
 
   return (
-    <section className="bg-gray-50 py-20 px-6 text-center">
+    <section className="bg-gray-50 py-28 px-6 text-center">
       {/* Heading */}
       <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
         <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">

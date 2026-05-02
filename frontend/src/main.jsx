@@ -29,6 +29,7 @@ try {
   }
   window.addEventListener('keydown', handleAlt)
 } catch (err) {
+  console.warn('Locator runtime not supported in this environment:', err)
   // ignore in non-browser environments
 }
 

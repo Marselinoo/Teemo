@@ -1,71 +1,69 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
-import { useTheme } from "../context/ThemeContext";
-import { Rocket, Moon, Sun, LayoutDashboard, Rss, Trophy, User as UserIcon, LogOut } from "lucide-react";
+import { Target } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
-export default function Navbar() {
-    const { isLoggedIn, user, logout } = useAuth();
-    const { theme, toggleTheme } = useTheme();
-    const navigate = useNavigate();
+function Navbar({ user = { name: "sadasd" }, onLogout }) {
+  const menu = [
+    { name: "Dashboard", path: "/dashboard" },
+    { name: "Feed", path: "/feed" },
+    { name: "Competitions", path: "/competitions" },
+    { name: "Profile", path: "/profile" },
+  ];
 
-    const handleLogout = () => {
-        logout();
-        navigate("/");
-    };
+  return (
+    <header className="w-full bg-white border-b border-gray-200">
+      <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+        
+        {/* LEFT: Logo */}
+        <div className="flex items-center gap-2">
+          <Target className="text-pink-500 w-5 h-5" />
+          <span className="font-bold text-blue-900 text-lg tracking-wide">
+            TEEMO
+          </span>
+        </div>
 
-    if (!isLoggedIn) {
-        return null;
-    }
-
-    return (
-        <nav className="sticky top-4 z-50 glass-card mx-4 rounded-2xl px-6 py-3 mb-8">
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
-                <Link to="/dashboard" className="text-xl font-black tracking-tighter text-[--primary] flex items-center gap-2">
-                    <Rocket className="w-6 h-6" />
-                    TEEMO
-                </Link>
-
-                <div className="hidden md:flex items-center gap-2">
-                    {[
-                      { to: "/dashboard", icon: LayoutDashboard, label: "Dashboard" },
-                      { to: "/feed", icon: Rss, label: "Feed" },
-                      { to: "/competitions", icon: Trophy, label: "Competitions" },
-                      { to: `/profile/${user?.id}`, icon: UserIcon, label: "Profile" },
-                    ].map((item) => (
-                      <Link 
-                        key={item.to}
-                        to={item.to} 
-                        className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-[--muted-foreground] hover:text-[--foreground] hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
-                      >
-                        <item.icon className="w-4 h-4" />
-                        {item.label}
-                      </Link>
-                    ))}
-                </div>
-
-                <div className="flex items-center gap-4">
-                    <button 
-                      className="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-[--muted-foreground]" 
-                      onClick={toggleTheme} 
-                      aria-label="Toggle theme"
-                    >
-                        {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
-                    </button>
-                    
-                    <div className="h-6 w-px bg-[--border] mx-2"></div>
-
-                    <div className="flex items-center gap-3">
-                        <div className="text-right hidden sm:block">
-                            <p className="text-xs font-bold text-black leading-none mb-1">{user?.name}</p>
-                            <p className="text-[10px] text-slate-500 uppercase tracking-widest font-medium">Competitor</p>
-                        </div>
-                        <button onClick={handleLogout} className="p-2 rounded-xl text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-900/20 transition-colors" title="Logout">
-                            <LogOut className="w-5 h-5" />
-                        </button>
-                    </div>
-                </div>
-            </div>
+        {/* CENTER: Menu */}
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+          {menu.map((item) => (
+            <NavLink
+              key={item.name}
+              to={item.path}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-blue-600 font-semibold"
+                  : "hover:text-blue-500 transition"
+              }
+            >
+              {item.name}
+            </NavLink>
+          ))}
         </nav>
-    );
+
+        {/* RIGHT: User */}
+        <div className="flex items-center gap-4">
+          
+          {/* Avatar */}
+          <div className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-sm">
+            🌙
+          </div>
+
+          {/* Username */}
+          <span className="text-sm font-medium text-gray-700">
+            {user?.name}
+          </span>
+
+          {/* Logout */}
+          <button
+            onClick={onLogout}
+            className="px-4 py-1.5 text-sm border border-red-300 text-red-500 rounded-lg hover:bg-red-50 transition"
+          >
+            Logout
+          </button>
+
+        </div>
+
+      </div>
+    </header>
+  );
 }
 
+export default Navbar;
