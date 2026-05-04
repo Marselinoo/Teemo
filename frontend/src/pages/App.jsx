@@ -13,6 +13,7 @@ import LoginPage from './LoginPage'
 import DashboardPage from './DashboardPage'
 import FeedPage from './FeedPage'
 import CompetitionPage from './CompetitionPage'
+import ProfilePage from './Profile'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -24,6 +25,7 @@ function App() {
         <Route path='/dashboard' element={<DashboardPage />} />
         <Route path='/feed' element={<FeedPage />} />
         <Route path='/competitions' element={<CompetitionPage />} />
+        <Route path='/profile' element={<ProfilePage />} />
         
         <Route path='/*' element={<NotFoundPage />} />
       </Routes>
