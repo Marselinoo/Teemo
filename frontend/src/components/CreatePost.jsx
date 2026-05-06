@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useAuth } from "../context/UseAuth";
 
 function CreatePost({ onCreate }) {
   const [text, setText] = useState("");
+  const { user } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,8 +14,8 @@ function CreatePost({ onCreate }) {
       id: Date.now(),
       text,
       user: {
-        name: "John Doe",
-        role: "Frontend Developer",
+        name: user?.name || "John Doe",
+        role: user?.role || "Frontend Developer",
       },
       likes: 0,
       comments: 0,

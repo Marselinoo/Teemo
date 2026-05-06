@@ -1,11 +1,14 @@
-function DashboardHeader({ name = "User" }) {
+import { useAuth } from "../context/UseAuth";
+
+function DashboardHeader() {
+  const { user } = useAuth();
   return (
     <div className="bg-gradient-to-r from-blue-900 to-indigo-500 text-white py-20 text-center relative">
       
       {/* Content */}
       <div className="max-w-4xl mx-auto px-6">
         <h1 className="text-2xl md:text-3xl font-bold">
-          Selamat datang kembali, {name}! 👋
+          Selamat datang kembali, {user?.name}! 👋
         </h1>
 
         <p className="mt-3 text-white/80">

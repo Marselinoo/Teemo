@@ -5,6 +5,7 @@ function PostCard({
   comments = 0,
   createdAt,
 }) {
+  // const { user } = useAuth();
   return (
     <div className="bg-white p-5 rounded-xl shadow-md border border-gray-200 space-y-4">
       

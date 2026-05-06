@@ -1,12 +1,14 @@
 import { MapPin, Pencil } from "lucide-react";
+import { useAuth } from "../../context/UseAuth";
 
 export default function ProfileHeader({
-  name = "Default",
   role = "Senior FullStack Developer & UI/UX Designer",
   location = "Yogyakarta, Indonesia",
   avatar = "https://api.dicebear.com/7.x/adventurer/svg?seed=John",
   onEdit = () => alert("Edit profile clicked!"),
 }) {
+  const { user } = useAuth();
+
   return (
     <div className="w-full max-w-5xl mx-auto px-4">
       <div className="relative bg-white rounded-2xl shadow-md overflow-hidden">
@@ -45,7 +47,7 @@ export default function ProfileHeader({
 
           {/* Name */}
           <h1 className="text-xl sm:text-2xl font-bold text-blue-900 mt-2">
-            {name}
+            {user?.name}
           </h1>
 
           {/* Role */}

@@ -1,9 +1,13 @@
 import InputField from "./InputField";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Mail, Lock } from "lucide-react";
+import { useAuth } from "../context/UseAuth";
 
 function LoginForm() {
+    const { login } = useAuth();
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -11,11 +15,13 @@ function LoginForm() {
         e.preventDefault();
         const data ={
             email,
+            name: email.split("@")[0], // contoh nama diambil dari email sebelum @
             password,
         }
         
         // handle kirim ke backend (nanti)
-        
+        login(data);
+        navigate("/dashboard");
         console.log(data);
     };
     return (

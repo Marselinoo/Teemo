@@ -14,6 +14,9 @@ import NetworkCard from "../components/profile/NetworkCard";
 import InfoCard from "../components/profile/InfoCard";
 import RecentCompetitions from "../components/profile/RecentCompetitions";
 
+import CertificatesSection from "../components/Profile/CertificatesSection";
+import AchievementsSection from "../components/Profile/AchievementsSection";
+
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState("tentang");
 
@@ -30,7 +33,7 @@ export default function ProfilePage() {
       <ProfileTabs onChange={setActiveTab} />
 
       {/* Content */}
-      <aside className="max-w-5xl mx-auto mt-6 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="max-w-5xl mx-auto mt-6 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
         
         {/* LEFT SIDE */}
         <div className="md:col-span-2 space-y-6">
@@ -44,27 +47,23 @@ export default function ProfilePage() {
           )}
 
           {activeTab === "sertifikat" && (
-            <div className="bg-white rounded-2xl p-6 shadow-sm text-center text-gray-500">
-              Belum ada sertifikat
-            </div>
+            <CertificatesSection />
           )}
 
           {activeTab === "pencapaian" && (
-            <div className="bg-white rounded-2xl p-6 shadow-sm text-center text-gray-500">
-              Belum ada pencapaian
-            </div>
+            <AchievementsSection />
           )}
 
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="space-y-6">
+        <aside className="space-y-6">
           <NetworkCard />
           <InfoCard />
           <RecentCompetitions />
-        </div>
+        </aside>
 
-      </aside>
+      </div>
     </div>
   );
 }

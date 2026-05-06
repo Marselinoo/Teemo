@@ -1,7 +1,7 @@
 function StatsCard({ title, value, icon: Icon, color = "text-gray-500" }) {
   return (
     <div className="bg-white rounded-xl shadow-md p-5 flex items-center gap-4 hover:shadow-lg transition">
-      
+
       {/* Icon Box */}
       <div className="bg-gray-100 p-3 rounded-lg flex items-center justify-center">
         {Icon && <Icon className={`w-5 h-5 ${color}`} />}

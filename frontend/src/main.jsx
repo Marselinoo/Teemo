@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './pages/index.css'
 import App from './pages/App.jsx'
+import { AuthProvider } from './context/AuthContext'
 
 // Lazy-init Locator runtime when user presses the Option/Alt key.
 // This avoids adding the locator UI to every page load and mirrors
@@ -36,7 +37,9 @@ try {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </BrowserRouter>
   </StrictMode>,
 )

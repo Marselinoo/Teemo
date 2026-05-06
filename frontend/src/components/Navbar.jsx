@@ -1,8 +1,11 @@
 import { Target, Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { useAuth } from "../context/UseAuth";
 
-function Navbar({ user = { name: "Default" }, onLogout }) {
+function Navbar() {
+  const { user, logout } = useAuth();
+
   const [open, setOpen] = useState(false);
 
   const menu = [
@@ -62,7 +65,7 @@ function Navbar({ user = { name: "Default" }, onLogout }) {
             </span>
 
             <button
-              onClick={onLogout}
+              onClick={logout}
               className="px-4 py-1.5 text-sm border border-red-300 text-red-500 rounded-lg hover:bg-red-500 hover:text-white transition"
             >
               Logout
@@ -89,7 +92,7 @@ function Navbar({ user = { name: "Default" }, onLogout }) {
             <span className="text-sm text-gray-600">{user?.name}</span>
 
             <button
-              onClick={onLogout}
+              onClick={logout}
               className="text-sm text-red-500"
             >
               Logout
